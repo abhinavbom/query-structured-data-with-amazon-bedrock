@@ -25,7 +25,7 @@ public class BedrockService {
         BedrockRuntimeClient bedrockRuntimeClient = BedrockRuntimeClient.builder().build();
         ObjectNode bedrockBody = createBedrockBody(prompt);
         InvokeModelRequest request = InvokeModelRequest.builder()
-                .modelId("anthropic.claude-v2")
+                .modelId("meta.llama2-70b-chat-v1")
                 .body(SdkBytes.fromString(bedrockBody.toString(), Charset.defaultCharset()))
                 .build();
         InvokeModelResponse invokeModel = bedrockRuntimeClient.invokeModel(request);
